@@ -16,11 +16,11 @@ function getMessages(req, res) {
 }
 
 function postMessages(req, res) {
-  messages = [req.body.msg, ...messages.slice(0, 9)];
+  messages = [req.body.msg, ...messages.slice(0, 9)]; // ... <- rest operator | slices the messages into 9 entries to save memory
   res.json(messages);
 }
 
 app.get('/messages', getMessages);
-app.post('/messages', express.json(), postMessages);
+app.post('/messages', express.json(), postMessages); // express.json is here bc it takes the strings and turns them into json files
 
 app.listen(8080);

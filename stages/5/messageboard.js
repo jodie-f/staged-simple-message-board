@@ -1,5 +1,6 @@
 import uuid from 'uuid-random';
 
+// used to be in s4's svr
 let messages = [
   {
     id: 'xnshfdsafasd',
@@ -18,6 +19,7 @@ let messages = [
   },
 ];
 
+// broken down logic from svr.js getMessages func
 export function listMessages() {
   return messages;
 }

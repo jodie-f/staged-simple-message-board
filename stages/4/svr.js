@@ -51,7 +51,7 @@ function postMessages(req, res) {
 }
 
 app.get('/messages', getMessages);
-app.get('/messages/:id', getMessage);
+app.get('/messages/:id', getMessage); 
 app.post('/messages', express.json(), postMessages);
 
 app.listen(8080);

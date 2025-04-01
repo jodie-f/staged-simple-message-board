@@ -40,11 +40,11 @@ async function sendMessage() {
 
   const response = await fetch('messages', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
+    headers: { 'Content-Type': 'application/json' }, 
+    body: JSON.stringify(payload), // turning payload into string, and including it as the body
   });
 
-  if (response.ok) {
+  if (response.ok) { // `postMessages` function on svr.js has been run
     el.message.value = '';
     const updatedMessages = await response.json();
     removeContentFrom(el.messagelist);
@@ -58,7 +58,7 @@ async function sendMessage() {
  * Page elements used in the program are
  * setup here for convenience.
  */
-function prepareHandles() {
+function prepareHandles() { // these are put into the `el` element declared t the top of file
   el.messagelist = document.querySelector('#messagelist');
   el.message = document.querySelector('#message');
   el.send = document.querySelector('#send');
